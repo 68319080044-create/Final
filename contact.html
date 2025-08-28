@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap Google Map</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        /* Custom CSS to make the map fill the container */
+        #map {
+            height: 500px;
+            /* Adjust the height as needed */
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container my-5">
+        <h1 class="text-center mb-4">KAWASAKI MOTORS ENTERPRISE</h1>
+
+        <div id="map"></div>
+    </div>
+
+    <footer class="bg-dark text-white py-5">
+        <div class="container">
+            <div class="row">
+                <!-- คอลัมน์ 1: อื่น ๆ -->
+                <div class="col-md-4 mb-4">
+                    <h5 class="text-success">อื่นๆ</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-white text-decoration-none">สมัครงาน</a></li>
+                        <li><a href="#" class="text-white text-decoration-none">จัดซื้อจัดจ้าง</a></li>
+                        <li><a href="#" class="text-white text-decoration-none">แผนที่</a></li>
+                        <li><a href="#" class="text-white text-decoration-none">ถาม-ตอบ (Q&A)</a></li>
+                        <li><a href="#" class="text-white text-decoration-none">ติดต่อสอบถาม/เสนอแนะ</a></li>
+                        <li><a href="#" class="text-white text-decoration-none">ร้องเรียนทุจริตและประพฤติมิชอบ</a></li>
+                        <li><a href="#" class="text-white text-decoration-none">ศูนย์ข้อมูลข่าวสารราชการ</a></li>
+                    </ul>
+                </div>
+
+                <!-- คอลัมน์ 2: ที่อยู่ -->
+                <div class="col-md-4 mb-4">
+                    <h5 class="text-success">ติดต่อ มจพ. กรุงเทพฯ</h5>
+                    <p>
+                        <i class="bi bi-geo-alt-fill"></i> บริษัท คาวาซากิ มอเตอร์ เอ็นเตอร์ไพรส์ (ประเทศไทย) จำกัด<br>
+                        2499 ถนนเพชรบุรีตัดใหม่ แขวงบางกะปิ เขตห้วยขวาง กรุงเทพมหานคร 10310
+                    </p>
+                    <p><i class="bi bi-telephone-fill"></i> ติดต่อสำนักงานคาวาซากิ : 02-018-4999</p>
+                    <p><i class="bi bi-printer-fill"></i>สายตรง Call Center รับแจ้งร้องเรียน : 0-2033-1858 ,<br>  0-2033-1859</p>
+                    <p><i class="bi bi-envelope-fill"></i> เปิดทำการ : วันจันทร์ – วันศุกร์ <br>เวลาทำการ : 08.00 – 17.15 น.</p>
+                </div>
+
+                <!-- คอลัมน์ 3: social + โลโก้ -->
+                <div class="col-md-4 text-center">
+                    <h5 class="text-success">ติดตามเราได้ที่</h5>
+                    <div class="mb-3">
+                        <a href="#" class="text-white fs-4 me-3"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="text-white fs-4 me-3"><i class="bi bi-twitter-x"></i></a>
+                        <a href="#" class="text-white fs-4 me-3"><i class="bi bi-youtube"></i></a>
+                        <a href="#" class="text-white fs-4"><i class="bi bi-tiktok"></i></a>
+                    </div>
+                    <a class="navbar-brand" href="https://www.facebook.com/KawasakiMotorsThailand">
+                        <img src="./img/kw-logo.png" alt="Logo">
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBLxrZWyDslUD_miymgJhaN_gaFvlBoDUk&callback=initMap"
+        async defer></script>
+
+    <script>
+        function initMap() {
+            const myLatLng = { lat: 13.7423312, lng: 100.5960008 };
+            const map = new google.maps.Map(document.getElementById("map"), {
+                zoom: 15,
+                center: myLatLng,
+            });
+            new google.maps.Marker({
+                position: myLatLng,
+                map,
+                title: "Our Office",
+            });
+        }
+    </script>
+</body>
+
+</html>
